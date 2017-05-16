@@ -1,11 +1,29 @@
 def fib_func(n):
-    if n<2:
-        return n
-    return fib_func(n-2) + fib_func(n-1)
+    """Return fib value"""
+    if n == 1:
+        return 1
+    elif n == 0:
+        return 0
+    return fib_func(n - 2) + fib_func(n - 1)
+
 
 def lucas_func(n):
-    if n == 0:
-        return 2
-    elif n == 1:
+    """Return lucus value."""
+    if n == 1:
         return 1
-    return lucas_func(n -1) + lucas_func(n -2)
+    elif n == 0:
+        return 2
+    return lucas_func(n - 2) + lucas_func(n - 1)
+
+
+def sum_series(n, x=0, y=1):
+    """Return sum series return value."""
+    if n == 1:
+        return y
+    elif n == 0:
+        return x
+    return sum_series(n - 2, x, y) + sum_series(n - 1, x, y)
+
+
+if __name__ == "__main__":
+    sum_series(4)
